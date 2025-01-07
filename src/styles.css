@@ -1,0 +1,186 @@
+body {
+  background-color: #222;
+  color: #fff;
+  font-family: 'Orbitron', sans-serif; /* Space-themed font */
+}
+
+/* General Layout */
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Navbar */
+/* Navbar stays at the top */
+.navbar {
+  position: sticky;
+  top: 0;
+  background-image: url('/background.jpg'); /* Reference from the public folder */
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000; /* Ensure navbar stays on top */
+}
+
+/* Main container adjustment */
+main {
+  flex: 1; /* Allow main to take up all remaining space */
+  overflow-y: auto; /* Enable scrolling when content exceeds the available space */
+  background: rgba(0, 0, 0, 0.7); /* Darker background for the page content */
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Adds depth */
+  padding: 20px;
+  display: flex;
+  flex-direction: column; /* Column layout */
+  align-items: center;
+  text-align: center;
+}
+
+.navbar h1 {
+  font-size: 3rem;
+  /* Background and text color */
+  background: linear-gradient(135deg, #1d2b64, #0a0f27); /* Gradient from dark blue to space-dark */
+  color: #fff; /* White text */
+  
+  /* Space-like styling */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Subtle shadow for depth */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Adds a subtle glow effect to the text */
+  
+}
+
+
+
+.navbar-buttons button {
+  margin-right: 10px;
+}
+
+.resource-display {
+  background: linear-gradient(135deg, #1d2b64, #0a0f27); /* Gradient from dark blue to space-dark */
+  color: #fff; /* White text */
+  
+  /* Space-like styling */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Subtle shadow for depth */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Adds a subtle glow effect to the text */
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-right: 20px;
+}
+
+.resource-item {
+  display: flex;
+  gap: 5px;
+}
+
+/* AI Dialog container */
+.ai-dialog {
+  background: linear-gradient(135deg, #1d2b64, #0a0f27); /* Gradient from dark blue to space-dark */
+  color: #fff; /* White text */
+  
+  /* Space-like styling */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Subtle shadow for depth */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Adds a subtle glow effect to the text */
+  padding: 10px;
+  border: 1px solid #444;
+  height: 300px;  /* Fixed height for scroll container */
+  width: 600px;
+  overflow-y: auto;  /* Enable vertical scrolling */
+  font-family: monospace;
+}
+
+/* Container for messages */
+.ai-dialog .log-container {
+  display: flex;
+  flex-direction: column;  /* Ensure messages stack vertically */
+  padding-right: 10px;  /* To prevent the last message from being cut off */
+}
+
+/* Message styling */
+.ai-dialog .log-container p {
+  margin: 0;
+  padding: 2px 0;
+}
+
+/* General button styling */
+button {
+  padding: 12px 24px; /* Adequate padding for better button size */
+  font-size: 1.2rem; /* Font size */
+  border: none; /* Remove default border */
+  border-radius: 10px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  outline: none; /* Remove focus outline */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+  
+  /* Background and text color */
+  background: linear-gradient(135deg, #1d2b64, #0a0f27); /* Gradient from dark blue to space-dark */
+  color: #fff; /* White text */
+  
+  /* Space-like styling */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Subtle shadow for depth */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Adds a subtle glow effect to the text */
+}
+
+button:hover {
+  background: linear-gradient(135deg, #4e5d94, #2e3b5f); /* Lighter gradient on hover */
+  transform: translateY(-3px); /* Slight lift effect */
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5); /* Darker shadow on hover */
+}
+
+button:active {
+  transform: translateY(1px); /* Pressed effect */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6); /* Subtle shadow when pressed */
+}
+
+/* Home page specific styling */
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+}
+.upgrades {
+  margin: 10px 0;
+  background: rgba(0, 0, 0, 0.6); /* Dark background for sections */
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+}
+
+/* Navigation Room page specific styling */
+.navigation-room {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  width: 100%;
+}
+.planet-selection {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Drone Room page specific styling */
+.room {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  width: 100%;
+}
+.room div {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}

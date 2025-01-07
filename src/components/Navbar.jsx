@@ -3,8 +3,6 @@ import React, { useState, forwardRef } from 'react';
 import planets from '../data/planets';
 import ResourceDisplay from './ResourceDisplay';
 import AIDialog from './AIDialog';
-import launchShipButton from '../assets/launchshipbutton.png';
-import shipLaunchedButton from '../assets/shiplaunchedbutton.png';
 
 const Navbar =({ selectedPlanet, resources, setResources, addLog, aiLogs, setDrones, setDroneRoomLevel, setNavigationLevel }) => {
   const [isTraveling, setIsTraveling] = useState(false);
@@ -111,7 +109,7 @@ const resetApp = () => {
         <h1>Planet Miner Idle</h1>
         <button onClick={handleLaunch} disabled={isTraveling || isMining || isPressed}>
           <img 
-            src={isPressed ? shipLaunchedButton : launchShipButton} 
+            src={isPressed ? '/shiplaunchedbutton.png' : '/launchshipbutton.png'}
             alt="Launch Ship" 
             style={{ width: '200px', height: 'auto' }} // You can adjust the size as needed
           />

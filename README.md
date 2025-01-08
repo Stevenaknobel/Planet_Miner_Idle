@@ -13,3 +13,30 @@ Planet Miner Idle is an idle resource management game where players explore vari
 - React.js
 - Local Storage for persistent data
 - CSS for styling
+
+
+Feedback:
+
+Add a summary of how many resources were gathered
+clean up the ui of the drone room costs
+change planet names in the navigation room to the actual planets
+add prestige?
+show what resources you can get from a planet
+make a research room
+make a trading hall
+can you click and drag to scroll?
+
+
+research room potential upgrades
+improve travel time
+improve mining time
+general mining efficiency (increase capacity)
+reduce drone cost
+improve drone mining efficiency
+reduce building cost
+allow even more drones
+auto-mine with a delay
+unlock a second ship
+
+challenges with bonuses attached to them
+eg: reach 5000 scrap you get 10% increase in scrap

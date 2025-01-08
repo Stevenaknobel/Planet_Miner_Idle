@@ -15,6 +15,7 @@ const planets = [
   { id: 14, name: 'Joenaris', resources: { joenite: 50 }, travelTime: 35, miningTime: 70 },
   { id: 15, name: 'Theonix', resources: { theonite: 50 }, travelTime: 40, miningTime: 80 },
   { id: 16, name: 'Jakara', resources: { jakium: 50 }, travelTime: 45, miningTime: 90 },
+  { id: 17, name: 'Kennifernia', resources: { kennium: 50 }, travelTime: 60, miningTime: 120 },
 ];
 
 export default planets;

@@ -18,15 +18,15 @@ const Navbar =({ selectedPlanet, resources, setResources, addLog, aiLogs, setDro
       addLog('No planet selected.');
       return;
     }
-
+  
     const planet = planets.find((p) => p.id === selectedPlanet);
     addLog(`Launching ship to ${planet.name}...`);
     setIsTraveling(true);
     setIsPressed(true);
-
+  
     // Set travel time countdown
     setTravelTimeLeft(planet.travelTime);
-
+  
     const travelInterval = setInterval(() => {
       setTravelTimeLeft((prevTime) => {
         if (prevTime <= 1) {
@@ -36,15 +36,15 @@ const Navbar =({ selectedPlanet, resources, setResources, addLog, aiLogs, setDro
         return prevTime - 1;
       });
     }, 1000);
-
+  
     setTimeout(() => {
       addLog(`Arrived at ${planet.name}. Starting mining.`);
       setIsTraveling(false);
       setIsMining(true);
-
+  
       // Set mining time countdown
       setMiningTimeLeft(planet.miningTime);
-
+  
       const miningInterval = setInterval(() => {
         setMiningTimeLeft((prevTime) => {
           if (prevTime <= 1) {
@@ -54,9 +54,16 @@ const Navbar =({ selectedPlanet, resources, setResources, addLog, aiLogs, setDro
           return prevTime - 1;
         });
       }, 1000);
-
+  
       setTimeout(() => {
-        addLog(`Mining complete on ${planet.name}.`);
+        // Create a formatted log message for mined resources
+        const minedResources = Object.entries(planet.resources)
+          .map(([resource, amount]) => `${resource.charAt(0).toUpperCase() + resource.slice(1)}: ${amount}`)
+          .join(', ');
+  
+        addLog(`Mining complete on ${planet.name}. Resources mined: ${minedResources}`);
+  
+        // Update resources
         setResources((prev) => {
           const newResources = { ...prev };
           Object.entries(planet.resources).forEach(([resource, amount]) => {
@@ -64,11 +71,13 @@ const Navbar =({ selectedPlanet, resources, setResources, addLog, aiLogs, setDro
           });
           return newResources;
         });
+  
         setIsMining(false);
         setIsPressed(false);
       }, planet.miningTime * 1000);
     }, planet.travelTime * 1000);
   };
+  
 
 const resetApp = () => {
    // Show confirmation dialog
